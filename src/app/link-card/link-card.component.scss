@@ -1,13 +1,13 @@
 .link-card {
-  width: 400px;
+  width: 360px;
   height: 240px;
 }
 
 .link-image {
-  width: 380px;
-  height: 220px;
+  max-width: 340px;
+  max-height: 220px;
   position: absolute;
-  margin-left: -190px;
+  margin-left: -170px;
   margin-top: -110px;
   left: 50%;
   top: 50%;

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { LINKS, findCategories, findByCategory } from '../links-data';
+import { LINKS, findCategories, findByCategory } from './links-data';
 import { Link } from './model/link';
 
 @Component({

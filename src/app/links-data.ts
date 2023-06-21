@@ -1,14 +1,14 @@
-import { Link } from './app/model/link';
+import { Link } from './model/link';
 
 export const LINKS: any = [
   {
     id: 1,
     description: 'Angular Core Deep Dive',
     iconUrl:
-      'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-core-in-depth-small.png',
-    url:
-      'A detailed walk-through of the most important part of Angular - the Core and Common modules',
+      'https://play-lh.googleusercontent.com/2gkcn0pnhPZhBPgM20s-o_KYU7Gca_sIFDsTq79Jp8plvH1W77Rlw7zfo5Vd1ZO6ric',
+    url: 'http://app.miio.pt',
     lessonsCount: 10,
+    category: 'NAV'
   },
   {
     id: 2,

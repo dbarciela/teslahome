@@ -1,18 +1,12 @@
-<mat-card
-  class="link-card"
-  *ngIf="link">
-  <img
-  class="link-image"
-  [src]="link.iconUrl"
-  alt=""
->
-  <mat-card-actions>
+<div class="link-card" *ngIf="link">
+  <div class="card-buttons">
     <button mat-button class="action-button" (click)="open()">
       <mat-icon class="button-icon">open_in_browser</mat-icon>
     </button>
-    <div class = "vertical"></div>
+    <div class="vertical"></div>
     <button mat-button class="action-button" (click)="fullscreen()">
       <mat-icon class="button-icon">fullscreen</mat-icon>
     </button>
-  </mat-card-actions>
-</mat-card>
+  </div>
+  <img class="link-image" [src]="link.iconUrl" alt="" />
+</div>

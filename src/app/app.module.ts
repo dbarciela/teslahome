@@ -17,13 +17,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { LinkCardComponent } from './link-card/link-card.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LinkCardComponent
-  ],
+  declarations: [AppComponent, LinkCardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,7 +28,7 @@ import { LinkCardComponent } from './link-card/link-card.component';
     MatTabsModule,
     MatToolbarModule,
     MatSlideToggleModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
     MatIconModule,
@@ -39,9 +36,10 @@ import { LinkCardComponent } from './link-card/link-card.component';
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    MatExpansionModule
+    MatExpansionModule,
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

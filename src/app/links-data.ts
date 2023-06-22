@@ -3,32 +3,30 @@ import { Link } from './model/link';
 export const LINKS: any = [
   {
     id: 1,
-    description: 'Angular Core Deep Dive',
+    description: 'Miio',
     iconUrl:
       'https://play-lh.googleusercontent.com/2gkcn0pnhPZhBPgM20s-o_KYU7Gca_sIFDsTq79Jp8plvH1W77Rlw7zfo5Vd1ZO6ric',
     url: 'http://app.miio.pt',
     lessonsCount: 10,
-    category: 'NAV'
+    category: 'CONDUÇÃO',
   },
   {
     id: 2,
-    description: 'RxJs In Practice Course',
+    description: 'Google',
     iconUrl:
-      'https://s3-us-west-1.amazonaws.com/angular-university/course-images/rxjs-in-practice-course.png',
-    url:
-      'Understand the RxJs Observable pattern, learn the RxJs Operators via practical examples',
-    category: 'BEGINNER',
+      'https://tekgenius.pt/wp-content/uploads/2016/12/google-logo-icon-PNG-Transparent-Background.png',
+    url: 'http://www.google.pt',
+    category: 'OUTROS',
     lessonsCount: 10,
   },
 
   {
     id: 3,
     description: 'NgRx In Depth',
-    url:
-      'Learn the modern Ngrx Ecosystem, including Store, Effects, Router Store, Ngrx Entity, Dev Tools and Schematics.',
+    url: 'Learn the modern Ngrx Ecosystem, including Store, Effects, Router Store, Ngrx Entity, Dev Tools and Schematics.',
     iconUrl:
       'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-ngrx-course.png',
-    category: 'ADVANCED',
+    category: 'OUTROS',
   },
 
   {
@@ -36,82 +34,83 @@ export const LINKS: any = [
     description: 'Angular for Beginners',
     iconUrl:
       'https://angular-academy.s3.amazonaws.com/thumbnails/angular2-for-beginners-small-v2.png',
-    url:
-      "Establish a solid layer of fundamentals, learn what's under the hood of Angular",
-    category: 'BEGINNER',
+    url: "Establish a solid layer of fundamentals, learn what's under the hood of Angular",
+    category: 'OUTROS',
     lessonsCount: 10,
   },
   {
     id: 5,
     description: 'Angular Security Course',
-    url:
-      'Learn Web Security Fundamentals and apply them to defend an Angular / Node Application from multiple types of attacks.',
+    url: 'Learn Web Security Fundamentals and apply them to defend an Angular / Node Application from multiple types of attacks.',
     iconUrl:
       'https://s3-us-west-1.amazonaws.com/angular-university/course-images/security-cover-small-v2.png',
-    category: 'ADVANCED',
+    category: 'OUTROS',
     lessonsCount: 11,
   },
   {
     id: 6,
-    description: 'Angular PWA Course',
-    url:
-      'Learn Angular Progressive Web Applications, build the future of the Web Today.',
+    description: 'ABRP',
+    url: 'https://abetterrouteplanner.com/',
     iconUrl:
-      'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-pwa-course.png',
-    category: 'ADVANCED',
+      'https://play-lh.googleusercontent.com/sMfxOkvSGh9ZS1OV8kl5cp0D0StQzNKhgfRCREqdkKRw0uw24jar7lzCIZW_XIfBkck=w600-h300-pc0xffffff-pd',
+    category: 'CONDUÇÃO',
     lessonsCount: 8,
   },
   {
     id: 7,
-    description: 'Angular Advanced Course',
-    url:
-      'Learn Advanced Angular functionality typically used in Library Development. Advanced Components, Directives, Testing, Npm',
+    description: 'Waze',
+    url: 'https://teslawaze.azurewebsites.net/',
     iconUrl:
-      'https://angular-academy.s3.amazonaws.com/thumbnails/advanced_angular-small-v3.png',
-    category: 'ADVANCED',
+      'https://developers.google.com/static/waze/images/logo_waze_color_2x_web_64dp.png?hl=pt-br',
+    category: 'CONDUÇÃO',
   },
   {
     id: 8,
     description: 'Complete Typescript Course',
-    url:
-      'Complete Guide to Typescript From Scratch: Learn the language in-depth and use it to build a Node REST API.',
+    url: 'Complete Guide to Typescript From Scratch: Learn the language in-depth and use it to build a Node REST API.',
     iconUrl:
       'https://angular-academy.s3.amazonaws.com/thumbnails/typescript-2-small.png',
-    category: 'BEGINNER',
+    category: 'OUTROS',
   },
   {
     id: 9,
-    description: 'Angular Architecture Course',
-    url:
-      'Learn the core RxJs Observable Pattern as well and many other Design Patterns for building Reactive Angular Applications.',
+    description: 'Prime Video',
+    url: 'https://www.primevideo.com/storefront',
     iconUrl:
-      'https://s3-us-west-1.amazonaws.com/angular-academy/blog/images/rxjs-reactive-patterns-small.png',
-    category: 'BEGINNER',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amazon_Prime_Video_logo.svg/1200px-Amazon_Prime_Video_logo.svg.png',
+    category: 'MULTIMEDIA',
   },
   {
     id: 10,
-    description: 'Angular Material Course',
+    description: 'Whatsapp',
     iconUrl:
-      'https://s3-us-west-1.amazonaws.com/angular-university/course-images/material_design.png',
-    url:
-      'Build Applications with the official Angular Widget Library',
-    category: 'ADVANCED',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png',
+    url: 'https://web.whatsapp.com/',
+    category: 'OUTROS',
   },
   {
     id: 11,
     description: 'HBO MAX',
-    iconUrl:
-      'assets/HBO-Max-Logo-700x394.png',
-    url:
-      'http://play.hbomax.com',
-    category: 'VIDEO',
+    iconUrl: 'assets/HBO-Max-Logo-700x394.png',
+    url: 'http://play.hbomax.com',
+    category: 'MULTIMEDIA',
   },
 ];
 
 export function findCategories(): string[] {
-  return [...new Set<string>(LINKS.map((link: Link) => link.category))];
+  return [...new Set<string>(LINKS.map((link: Link) => link.category))].sort(
+    (a, b) => a.localeCompare(b)
+  );
 }
 
 export function findByCategory(category: string): Link[] {
-  return LINKS.filter((link: Link) => link.category===category);
+  return LINKS.filter((link: Link) => link.category === category).sort(
+    (a: Link, b: Link) => a.description.localeCompare(b.description)
+  );
+}
+
+export function getLinks(): Link[] {
+  return LINKS.sort((a: Link, b: Link) =>
+    a.description.localeCompare(b.description)
+  );
 }

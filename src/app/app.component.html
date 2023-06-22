@@ -1,17 +1,45 @@
 <mat-tab-group animationDuration="0ms">
-  <mat-tab *ngFor="let category of getCategories()" [label]="category">
+  <mat-tab labelClass="tabBarButton">
+    <ng-template mat-tab-label>
+      <button mat-icon-button>
+        <mat-icon>apps</mat-icon>
+      </button>
+    </ng-template>
     <div class="tab-content">
+      <mat-form-field class="example-form-field">
+        <mat-label>Browse</mat-label>
+        <input matInput type="text" [(ngModel)]="toUrl">
+        <button *ngIf="toUrl" matSuffix mat-icon-button aria-label="Clear" (click)="toUrl=''">
+          <mat-icon>close</mat-icon> 
+        </button>
+        <button *ngIf="toUrl" matSuffix mat-icon-button aria-label="Go" (click)="goToFullScreen(toUrl)">
+          <mat-icon>fullscreen</mat-icon> 
+        </button>
+        <button *ngIf="toUrl" matSuffix mat-icon-button aria-label="Go" (click)="goTo(toUrl)">
+          <mat-icon>open_in_browser</mat-icon> 
+        </button>
+      </mat-form-field>
       <link-card
-        *ngFor="let item of getLinks(category)"
+        *ngFor="let item of getLinks()"
         [link]="item"
-        (onFullscreen)="goFullScreen($event)"
-        (onOpen)="go($event)"
+        (onFullscreen)="goToFullScreen($event)"
+        (onOpen)="goTo($event)"
       ></link-card>
     </div>
   </mat-tab>
-  <mat-tab labelClass="fullscreenButton">
+  <mat-tab *ngFor="let category of getCategories()" [label]="category">
+    <div class="tab-content">
+      <link-card
+        *ngFor="let item of getLinksByCategory(category)"
+        [link]="item"
+        (onFullscreen)="goToFullScreen($event)"
+        (onOpen)="goTo($event)"
+      ></link-card>
+    </div>
+  </mat-tab>
+  <mat-tab labelClass="tabBarButton">
     <ng-template mat-tab-label>
-      <button mat-icon-button (click)="goFullScreen('www.google.com')">
+      <button mat-icon-button (click)="goFullScreen()">
         <mat-icon>fullscreen</mat-icon>
       </button>
     </ng-template>

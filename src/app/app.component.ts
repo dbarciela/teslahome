@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { LINKS, findCategories, findByCategory } from './links-data';
+import { LINKS, findCategories, findByCategory, getLinks } from './links-data';
 import { Link } from './model/link';
 
 @Component({
@@ -12,21 +12,31 @@ import { Link } from './model/link';
 export class AppComponent {
   title = 'teslahome';
 
+  toUrl = 'http://';
+
   links = LINKS;
 
   getCategories(): string[] {
     return findCategories();
   }
 
-  getLinks(category: string): Link[] {
+  getLinksByCategory(category: string): Link[] {
     return findByCategory(category);
   }
 
-  goFullScreen(url: string): void {
-    this.go('https://www.youtube.com/redirect?q=' + url);
+  getLinks(): Link[] {
+    return getLinks();
   }
 
-  go(url: string): void {
+  goFullScreen(): void {
+    this.goToFullScreen(window.location.href);
+  }
+
+  goToFullScreen(url: string): void {
+    this.goTo('https://www.youtube.com/redirect?q=' + url);
+  }
+
+  goTo(url: string): void {
     window.location.href = url;
   }
 }

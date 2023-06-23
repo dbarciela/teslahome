@@ -2,7 +2,7 @@
   <mat-tab labelClass="tabBarButton">
     <ng-template mat-tab-label>
       <button mat-icon-button>
-        <mat-icon>apps</mat-icon>
+        <mat-icon>bookmark</mat-icon>
       </button>
     </ng-template>
     <div class="tab-content">
@@ -20,7 +20,7 @@
         </button>
       </mat-form-field>
       <link-card
-        *ngFor="let item of getLinks()"
+        *ngFor="let item of getFavorites()"
         [link]="item"
         (onFullscreen)="goToFullScreen($event)"
         (onOpen)="goTo($event)"

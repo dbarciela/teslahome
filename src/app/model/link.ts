@@ -4,5 +4,5 @@ export interface Link {
     iconUrl: string;
     url: string;
     category:string;
-    lessonsCount:number;
+    favorite:boolean;
 }

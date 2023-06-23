@@ -1,4 +1,5 @@
 <div class="link-card" *ngIf="link">
+  <img class="link-image" [src]="link.iconUrl" alt="" />
   <div class="card-buttons">
     <button mat-button class="action-button" (click)="open()">
       <mat-icon class="button-icon">open_in_browser</mat-icon>
@@ -8,5 +9,4 @@
       <mat-icon class="button-icon">fullscreen</mat-icon>
     </button>
   </div>
-  <img class="link-image" [src]="link.iconUrl" alt="" />
 </div>

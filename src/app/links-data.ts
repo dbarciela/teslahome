@@ -7,8 +7,8 @@ export const LINKS: any = [
     iconUrl:
       'https://play-lh.googleusercontent.com/2gkcn0pnhPZhBPgM20s-o_KYU7Gca_sIFDsTq79Jp8plvH1W77Rlw7zfo5Vd1ZO6ric',
     url: 'http://app.miio.pt',
-    lessonsCount: 10,
     category: 'CONDUÇÃO',
+    favorite:true
   },
   {
     id: 2,
@@ -17,35 +17,34 @@ export const LINKS: any = [
       'https://tekgenius.pt/wp-content/uploads/2016/12/google-logo-icon-PNG-Transparent-Background.png',
     url: 'http://www.google.pt',
     category: 'OUTROS',
-    lessonsCount: 10,
+    favorite:true
   },
-
   {
     id: 3,
-    description: 'NgRx In Depth',
-    url: 'Learn the modern Ngrx Ecosystem, including Store, Effects, Router Store, Ngrx Entity, Dev Tools and Schematics.',
+    description: 'BeachCam',
+    url: 'https://beachcam.meo.pt/livecams/',
     iconUrl:
-      'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-ngrx-course.png',
+      'https://play-lh.googleusercontent.com/iCabUzMq4BWCHpYxtBq0Ows33u0-2_WbOSJQP5_fantLWo92SaeLa2OSRjZ5SmGNZv0=w600-h300-pc0xffffff-pd',
     category: 'OUTROS',
+    favorite:false
   },
-
   {
     id: 4,
-    description: 'Angular for Beginners',
+    description: 'TripAdvisor',
     iconUrl:
-      'https://angular-academy.s3.amazonaws.com/thumbnails/angular2-for-beginners-small-v2.png',
-    url: "Establish a solid layer of fundamentals, learn what's under the hood of Angular",
-    category: 'OUTROS',
-    lessonsCount: 10,
+      'https://s3-eu-west-1.amazonaws.com/tpd/logos/46d41b9b000064000500b9bc/0x0.png',
+    url: 'https://www.tripadvisor.pt/',
+    category: 'CONDUÇÃO',
+    favorite:false
   },
   {
     id: 5,
-    description: 'Angular Security Course',
-    url: 'Learn Web Security Fundamentals and apply them to defend an Angular / Node Application from multiple types of attacks.',
+    description: 'Google Maps',
+    url: 'https://www.google.pt/maps',
     iconUrl:
-      'https://s3-us-west-1.amazonaws.com/angular-university/course-images/security-cover-small-v2.png',
-    category: 'OUTROS',
-    lessonsCount: 11,
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Google_Maps_icon_%282020%29.svg/1200px-Google_Maps_icon_%282020%29.svg.png',
+    category: 'CONDUÇÃO',
+    favorite:true
   },
   {
     id: 6,
@@ -54,7 +53,7 @@ export const LINKS: any = [
     iconUrl:
       'https://play-lh.googleusercontent.com/sMfxOkvSGh9ZS1OV8kl5cp0D0StQzNKhgfRCREqdkKRw0uw24jar7lzCIZW_XIfBkck=w600-h300-pc0xffffff-pd',
     category: 'CONDUÇÃO',
-    lessonsCount: 8,
+    favorite:true
   },
   {
     id: 7,
@@ -63,14 +62,16 @@ export const LINKS: any = [
     iconUrl:
       'https://developers.google.com/static/waze/images/logo_waze_color_2x_web_64dp.png?hl=pt-br',
     category: 'CONDUÇÃO',
+    favorite:true
   },
   {
     id: 8,
-    description: 'Complete Typescript Course',
-    url: 'Complete Guide to Typescript From Scratch: Learn the language in-depth and use it to build a Node REST API.',
+    description: 'Remote Desktop',
+    url: 'https://remotedesktop.google.com/access/',
     iconUrl:
-      'https://angular-academy.s3.amazonaws.com/thumbnails/typescript-2-small.png',
+      'https://play-lh.googleusercontent.com/I4DRWoABrUQsaAIQFVSKha98q1u2ilEdrwPJBaf9Mb8KdGZnXzs5DObrwcwUZovgOA',
     category: 'OUTROS',
+    favorite:false
   },
   {
     id: 9,
@@ -78,22 +79,51 @@ export const LINKS: any = [
     url: 'https://www.primevideo.com/storefront',
     iconUrl:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amazon_Prime_Video_logo.svg/1200px-Amazon_Prime_Video_logo.svg.png',
-    category: 'MULTIMEDIA',
+    category: 'ENTRETENIMENTO',
+    favorite:true
   },
   {
     id: 10,
-    description: 'Whatsapp',
-    iconUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png',
-    url: 'https://web.whatsapp.com/',
-    category: 'OUTROS',
+    description: 'AirConsole',
+    iconUrl: 'https://avatars.githubusercontent.com/u/12393047',
+    url: 'https://www.airconsole.com/',
+    category: 'ENTRETENIMENTO',
+    favorite:false
   },
   {
     id: 11,
     description: 'HBO MAX',
-    iconUrl: 'assets/HBO-Max-Logo-700x394.png',
+    iconUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/HBO_Max_Logo.svg/2560px-HBO_Max_Logo.svg.png',
     url: 'http://play.hbomax.com',
-    category: 'MULTIMEDIA',
+    category: 'ENTRETENIMENTO',
+    favorite:true
+  },
+  {
+    id: 12,
+    description: 'Accuweather',
+    url: 'https://www.accuweather.com/pt/pt/portugal-weather',
+    iconUrl:
+      'https://play-lh.googleusercontent.com/OlSOqjMCcsHip7rt5kDF05-39zKygwyj0IHVQCjwedvpanlj34u2IYVddCbZas8Ohg',
+    category: 'OUTROS',
+    favorite:true
+  },
+  {
+    id: 13,
+    description: 'HTML 5 Games',
+    url: 'https://html5games.com/',
+    iconUrl:
+      'https://play-lh.googleusercontent.com/ubXag7JaDoqwbn4IiCZGaNCJczu5B4W8kq8-OGBMwKG76Rux4I450ElqFkLrEYezrKw=w600-h300-pc0xffffff-pd',
+    category: 'ENTRETENIMENTO',
+    favorite:false
+  },
+  {
+    id: 14,
+    description: 'SpeedTest',
+    url: 'https://www.speedtest.net/',
+    iconUrl: 'https://www.speedtest.net/s/images/ookla/index/gauge-blue-1x.png',
+    category: 'OUTROS',
+    favorite:false
   },
 ];
 
@@ -109,8 +139,8 @@ export function findByCategory(category: string): Link[] {
   );
 }
 
-export function getLinks(): Link[] {
-  return LINKS.sort((a: Link, b: Link) =>
+export function getFavoriteLinks(): Link[] {
+  return LINKS.filter((link: Link) => link.favorite).sort((a: Link, b: Link) =>
     a.description.localeCompare(b.description)
   );
 }

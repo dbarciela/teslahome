@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { LINKS, findCategories, findByCategory, getLinks } from './links-data';
+import { LINKS, findCategories, findByCategory, getFavoriteLinks } from './links-data';
 import { Link } from './model/link';
 
 @Component({
@@ -24,8 +24,8 @@ export class AppComponent {
     return findByCategory(category);
   }
 
-  getLinks(): Link[] {
-    return getLinks();
+  getFavorites(): Link[] {
+    return getFavoriteLinks();
   }
 
   goFullScreen(): void {

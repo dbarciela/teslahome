@@ -1,4 +1,5 @@
-<mat-tab-group animationDuration="0ms">
+<mat-tab-group animationDuration="0ms" [(selectedIndex)]="selectedTab" (touchstart)="swipe($event, 'start')"
+  (touchend)="swipe($event, 'end')">
   <mat-tab labelClass="tabBarButton">
     <ng-template mat-tab-label>
       <button mat-icon-button>
@@ -8,33 +9,25 @@
     <div class="tab-content">
       <mat-form-field class="example-form-field">
         <mat-label>Browse</mat-label>
-        <input matInput type="text" [(ngModel)]="toUrl">
-        <button *ngIf="toUrl" matSuffix mat-icon-button aria-label="Clear" (click)="toUrl=''">
-          <mat-icon>close</mat-icon> 
+        <input matInput type="text" [(ngModel)]="toUrl" />
+        <button *ngIf="toUrl" matSuffix mat-icon-button aria-label="Clear" (click)="toUrl = ''">
+          <mat-icon>close</mat-icon>
         </button>
         <button *ngIf="toUrl" matSuffix mat-icon-button aria-label="Go" (click)="goToFullScreen(toUrl)">
-          <mat-icon>fullscreen</mat-icon> 
+          <mat-icon>fullscreen</mat-icon>
         </button>
         <button *ngIf="toUrl" matSuffix mat-icon-button aria-label="Go" (click)="goTo(toUrl)">
-          <mat-icon>open_in_browser</mat-icon> 
+          <mat-icon>open_in_browser</mat-icon>
         </button>
       </mat-form-field>
-      <link-card
-        *ngFor="let item of getFavorites()"
-        [link]="item"
-        (onFullscreen)="goToFullScreen($event)"
-        (onOpen)="goTo($event)"
-      ></link-card>
+      <link-card *ngFor="let item of getFavorites()" [link]="item" (onFullscreen)="goToFullScreen($event)"
+        (onOpen)="goTo($event)"></link-card>
     </div>
   </mat-tab>
-  <mat-tab *ngFor="let category of getCategories()" [label]="category">
+  <mat-tab *ngFor="let category of getCategories(); let i = index" [label]="category">
     <div class="tab-content">
-      <link-card
-        *ngFor="let item of getLinksByCategory(category)"
-        [link]="item"
-        (onFullscreen)="goToFullScreen($event)"
-        (onOpen)="goTo($event)"
-      ></link-card>
+      <link-card *ngFor="let item of getLinksByCategory(category)" [link]="item" (onFullscreen)="goToFullScreen($event)"
+        (onOpen)="goTo($event)"></link-card>
     </div>
   </mat-tab>
   <mat-tab labelClass="tabBarButton">
@@ -45,4 +38,3 @@
     </ng-template>
   </mat-tab>
 </mat-tab-group>
- 

@@ -26,7 +26,7 @@
         (onOpen)="goTo($event)"></link-card>
     </div>
   </mat-tab>
-  <mat-tab *ngFor="let itemEntry of links | groupBy: 'category'; let i = index" [label]="itemEntry.key">
+  <mat-tab *ngFor="let itemEntry of links | orderBy: 'category' | groupBy: 'category'; let i = index" [label]="itemEntry.key">
     <div class="tab-content">
       <link-card *ngFor="let item of itemEntry.value" [link]="item" (onFullscreen)="goToFullScreen($event)"
         (onOpen)="goTo($event)"></link-card>

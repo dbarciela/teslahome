@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { LinksService } from './services/links.service';
 import { GroupBy } from "./pipes/group-by";
+import { OrderBy } from "./pipes/order-by";
 
 @Component({
     selector: 'app-root',
@@ -17,7 +18,7 @@ import { GroupBy } from "./pipes/group-by";
     styleUrls: ['./app.component.scss'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [MatTabsModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, FormsModule, NgIf, NgFor, LinkCardComponent, CommonModule, GroupBy]
+    imports: [MatTabsModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, FormsModule, NgIf, NgFor, LinkCardComponent, CommonModule, GroupBy, OrderBy]
 })
 
 export class AppComponent {

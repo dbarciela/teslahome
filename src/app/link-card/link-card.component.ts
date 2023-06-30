@@ -1,10 +1,15 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Link } from '../model/link';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'link-card',
-  templateUrl: './link-card.component.html',
-  styleUrls: ['./link-card.component.scss']
+    selector: 'link-card',
+    templateUrl: './link-card.component.html',
+    styleUrls: ['./link-card.component.scss'],
+    standalone: true,
+    imports: [NgIf, MatButtonModule, MatIconModule]
 })
 export class LinkCardComponent  implements OnInit{
 

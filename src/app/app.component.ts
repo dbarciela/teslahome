@@ -1,37 +1,48 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { LINKS, findCategories, findByCategory, getFavoriteLinks} from './links-data';
 import { Link } from './model/link';
+import { LinkCardComponent } from './link-card/link-card.component';
+import { NgIf, NgFor, CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
+import { LinksService } from './services/links.service';
+import { GroupBy } from "./pipes/group-by";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [MatTabsModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, FormsModule, NgIf, NgFor, LinkCardComponent, CommonModule, GroupBy]
 })
 
 export class AppComponent {
   title = 'teslahome';
 
-  selectedTab = 1;
+  selectedTab = 0;
   tabCount = this.getCategories().length + 1; //include favorites tab
 
   toUrl = 'http://';
 
-  links = LINKS;
+  links = this.linksSrv.getAllLinks();
 
   swipeCoord: [number, number] = [0, 0];
   swipeTime: number = 0;
 
-  getCategories(): string[] {
-    return findCategories();
+  constructor(private linksSrv: LinksService){
+
   }
 
-  getLinksByCategory(category: string): Link[] {
-    return findByCategory(category);
+  getCategories(): string[] {
+    return this.linksSrv.findCategories();
   }
 
   getFavorites(): Link[] {
-    return getFavoriteLinks();
+    return this.linksSrv.getFavoriteLinks();
   }
 
   goFullScreen(): void {

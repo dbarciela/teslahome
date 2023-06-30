@@ -20,11 +20,17 @@
   opacity: unset;
 }
 
-.example-form-field {
+.form-field {
   width: 90%;
   margin-bottom: -1.25em;
 }
 
 .mdc-tab__text-label {
   font-weight: 500;
+}
+
+.widget-iframe{
+  border:0px;
+  width:360px;
+  height:240px;
 }

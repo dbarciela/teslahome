@@ -20,7 +20,7 @@
           <mat-icon>open_in_browser</mat-icon>
         </button>
       </mat-form-field>
-      <iframe src="https://widget-3be4d265966541278ff418c60cd10fcb.elfsig.ht" class="widget-iframe" scrolling="no"></iframe>
+      <!--<iframe src="https://widget-3be4d265966541278ff418c60cd10fcb.elfsig.ht" class="widget-iframe" scrolling="no"></iframe>-->
       <!--<iframe src="http://www.google.com/maps/?width=360&height=240&output=embed&saddr=My+Location&z=18&t=m&hl=pt" class="widget-iframe" scrolling="no"></iframe>-->
       <link-card *ngFor="let item of getFavorites()" [link]="item" (onFullscreen)="goToFullScreen($event)"
         (onOpen)="goTo($event)"></link-card>

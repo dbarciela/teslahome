@@ -128,13 +128,21 @@ const LINKS: Link[] = [
     favorite: false,
   },
   {
-    id: 14,
+    id: 15,
     description: 'JSConsole',
     url: 'https://jsconsole.com/',
     iconUrl:
       'https://www.saashub.com/images/app/service_logos/82/14985fef05e6/large.png',
     category: 'OUTROS',
     favorite: false,
+  },
+  {
+    id: 16,
+    description: 'MyInstants',
+    url: 'https://www.myinstants.com/pt/favorites/',
+    iconUrl:'https://m.media-amazon.com/images/I/61LNAo2K9RL.png',
+    category: 'OUTROS',
+    favorite: true,
   },
 ];
 

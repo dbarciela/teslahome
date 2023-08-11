@@ -142,6 +142,14 @@ const LINKS: Link[] = [
     url: 'https://www.myinstants.com/pt/favorites/',
     iconUrl:'https://m.media-amazon.com/images/I/61LNAo2K9RL.png',
     category: 'OUTROS',
+    favorite: false,
+  },
+  {
+    id: 17,
+    description: 'RedditSoccerStreams',
+    url: 'https://www.redditsoccerstreams.tv/',
+    iconUrl:'https://www.redditsoccerstreams.tv/wp-content/uploads/2020/10/cropped-Soccer-Streams-logo.png',
+    category: 'ENTRETENIMENTO',
     favorite: true,
   },
 ];

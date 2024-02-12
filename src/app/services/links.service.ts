@@ -152,6 +152,14 @@ const LINKS: Link[] = [
     category: 'ENTRETENIMENTO',
     favorite: true,
   },
+  {
+    id: 18,
+    description: 'Stremio',
+    url: 'https://app.strem.io/#/',
+    iconUrl:'https://app.strem.io/images/stremio.png',
+    category: 'ENTRETENIMENTO',
+    favorite: true,
+  },
 ];
 
 

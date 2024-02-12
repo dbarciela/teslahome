@@ -13,39 +13,64 @@ import { GroupBy } from "./pipes/group-by";
 import { OrderBy } from "./pipes/order-by";
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    standalone: true,
-    imports: [MatTabsModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, FormsModule, NgIf, NgFor, LinkCardComponent, CommonModule, GroupBy, OrderBy]
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  standalone: true,
+  imports: [
+    MatTabsModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, FormsModule, NgIf, NgFor, LinkCardComponent, CommonModule, GroupBy, OrderBy]
 })
 
 export class AppComponent {
   title = 'teslahome';
 
   selectedTab = 0;
-  tabCount = this.getCategories().length + 1; //include favorites tab
+  tabCount = 0; //include favorites tab
 
   toUrl = 'http://';
 
-  links = this.linksSrv.getAllLinks();
+  links: Link[] = [];
 
   swipeCoord: [number, number] = [0, 0];
   swipeTime: number = 0;
 
-  constructor(private linksSrv: LinksService){
+  constructor(private linksSrv: LinksService) {
 
+  }
+
+  ngOnInit(): void {
+    console.info('Fetching links');
+    this.linksSrv.loadAllLinks().subscribe({
+      next: (data: Link[]) => {
+        console.info('Links fetched successfully!');
+        this.links = data;
+        this.tabCount = this.getCategories().length + 1
+      },
+      error: (error: any) => {
+        console.error('Error fetching links', error);
+      }
+    });
   }
 
   getCategories(): string[] {
-    return this.linksSrv.findCategories();
+    return this.findCategories();
   }
 
   getFavorites(): Link[] {
-    return this.linksSrv.getFavoriteLinks();
+    return this.getFavoriteLinks();
+  }
+  findCategories(): string[] {
+    return [
+      ...new Set<string>(this.links.map((link: Link) => link.category)),
+    ].sort((a, b) => a.localeCompare(b));
   }
 
+  getFavoriteLinks(): Link[] {
+    return this.links.filter((link: Link) => link.favorite).sort(
+      (a: Link, b: Link) => a.description.localeCompare(b.description)
+    );
+  }
   goFullScreen(): void {
     this.goToFullScreen(window.location.href);
   }
